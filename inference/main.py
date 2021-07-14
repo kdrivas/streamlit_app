@@ -9,7 +9,19 @@ import cv2
 
 from constants import  BASE_PATH
 
+from starlette.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/')
 def read_root():
@@ -17,7 +29,6 @@ def read_root():
 
 @app.post('/styles/{style}/')
 async def transfer_style(style: str, file:UploadFile = File(...)):
-	#input_img = np.array(Image.open(file.file))
 	contents = await file.read()
 	nparr = np.fromstring(contents, np.uint8)
 	input_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
