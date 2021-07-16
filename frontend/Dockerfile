@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8051
 
 COPY . .
-CMD ["streamlit", "run", "main.py"]
+CMD streamlit serve --server.port $PORT app.py
