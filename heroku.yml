@@ -1,0 +1,4 @@
+build:
+  docker:
+    frontend: frontend/Dockerfile
+    inference: inference/Dockerfile
