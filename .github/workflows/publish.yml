@@ -30,14 +30,14 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./frontend
-          file: Dockerfile.frontend
+          file: Dockerfile
           push: true
           tags: seyco/frontend-streamlit:latest
       - 
         name: Build and push backend
         uses: docker/build-push-action@v2
         with:
-          context: ./backend
-          file: Dockerfile.backend
+          context: ./inference
+          file: Dockerfile
           push: true
           tags: seyco/backend-streamlit:latest
