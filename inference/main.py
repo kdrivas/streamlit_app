@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 import io
 import cv2
+import os
 
 from constants import  BASE_PATH
 
@@ -25,7 +26,7 @@ app.add_middleware(
 
 @app.get('/')
 def read_root():
-	return {'Message': 'App is running'}
+	return {"Served From": str(os.getpid())}
 
 @app.post('/styles/{style}/')
 async def transfer_style(style: str, file:UploadFile = File(...)):
