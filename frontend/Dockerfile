@@ -14,7 +14,7 @@ RUN bash -c 'echo -e "\
 headless = true\n\
 enableXsrfProtection = false\n\
 enableCORS = false\n\
-" > ~/..streamlit/config.toml'
+" > ~/.streamlit/config.toml'
 
 RUN chmod +x ./run_streamlit.sh
 
