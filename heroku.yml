@@ -2,4 +2,4 @@ build:
   docker:
     frontend: frontend/Dockerfile
 run:
-  web: ./frontend/heroku_startup.sh
+  frontend: frontend/heroku_startup.sh
