@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8051
 
 COPY . .
-CMD streamlit run --server.port $PORT app.py
+CMD streamlit run --server.port $PORT main.py
