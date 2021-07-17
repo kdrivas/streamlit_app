@@ -4,6 +4,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 EXPOSE $PORT
+EXPOSE 8501
 
 COPY . .
-CMD sh setup.sh && streamlit run main.py --server.address=179.6.198.77
+CMD sh setup.sh && streamlit run main.py --server.address=0.0.0.0
