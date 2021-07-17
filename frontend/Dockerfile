@@ -7,4 +7,7 @@ EXPOSE $PORT
 EXPOSE 8501
 
 COPY . .
-CMD sh setup.sh && streamlit run main.py --server.address=0.0.0.0
+
+RUN chmod +x ./run_streamlit.sh
+
+ENTRYPOINT [ "./run_streamlit.sh" ]

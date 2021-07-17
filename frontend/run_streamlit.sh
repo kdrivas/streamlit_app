@@ -8,3 +8,5 @@ enableCORS = false\n\
 enableXsrfProtection = false\n\
 \n\
 " > ~/.streamlit/config.toml
+
+streamlit run main.py
