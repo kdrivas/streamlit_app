@@ -8,6 +8,7 @@ EXPOSE 8501
 
 COPY . .
 
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN mkdir -p ~/.streamlit/
 RUN bash -c 'echo -e "\
 [server]\n\
