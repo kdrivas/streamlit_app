@@ -1,2 +1,2 @@
 #!/bin/bash
-streamlit run main.py
+streamlit run --server.port $PORT main.py
