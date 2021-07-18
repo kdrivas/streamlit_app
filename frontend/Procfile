@@ -1,1 +1,1 @@
-web: pip install -r frontend/requirements.txt && sh frontend/setup.sh && streamlit run --server.port $PORT frontend/main.py
+web: sh frontend/setup.sh && streamlit run --server.port $PORT frontend/main.py
