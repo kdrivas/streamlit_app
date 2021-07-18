@@ -32,8 +32,9 @@ async def transfer_style(style: str, file:UploadFile = File(...)):
 	nparr = np.fromstring(contents, np.uint8)
 	input_img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 	
-	model = cv2.dnn.readNetFromTorch(f'{BASE_PATH}/{style}.t7')
-	cv2img, new_shape = run_prediction(model, input_img)
-	res, im_png = cv2.imencode(".png", cv2img)
+	#model = cv2.dnn.readNetFromTorch(f'{BASE_PATH}/{style}.t7')
+	#cv2img, new_shape = run_prediction(model, input_img)
+	#res, im_png = cv2.imencode(".png", cv2img)
+	res, im_png = cv2.imencode(".png", input_img)
 	
 	return StreamingResponse(io.BytesIO(im_png.tobytes()), media_type="image/png")
