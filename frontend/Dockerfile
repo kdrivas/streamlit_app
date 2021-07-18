@@ -17,6 +17,7 @@ serverAddress = whispering-peak-59110.herokuapp.com\n\
 headless = true\n\
 enableXsrfProtection = false\n\
 enableCORS = false\n\
+port = $PORT\n\
 " > ~/.streamlit/config.toml'
 
 RUN chmod +x ./run_streamlit.sh
