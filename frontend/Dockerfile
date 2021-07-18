@@ -11,6 +11,8 @@ COPY . .
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN mkdir -p ~/.streamlit/
 RUN bash -c 'echo -e "\
+[browser]\n\
+serverAddress = whispering-peak-59110.herokuapp.com\n\
 [server]\n\
 headless = true\n\
 enableXsrfProtection = false\n\
