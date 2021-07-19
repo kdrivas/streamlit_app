@@ -1,1 +1,1 @@
-web: bash frontend/setup.sh && streamlit run --server.port $PORT --server.enableCORS false --server.enableXsrfProtection false frontend/main.py
+web: bash frontend/setup.sh && export SERVER_PORT="pos-api-14061997-aloha" && streamlit run --server.port $PORT --server.enableCORS false --server.enableXsrfProtection false frontend/main.py

@@ -1,7 +1,7 @@
 import streamlit as st
 import requests 
 from io import BytesIO
-
+import os
 from PIL import Image
 
 STYLES = {
@@ -15,13 +15,15 @@ STYLES = {
     "udnie": "udnie",
 }
 
+server = os.getenv('SERVER_PORT', 'inference:8080')
+
 st.write("Test App")
 
 file = st.file_uploader("Upload an image", type=['png', 'jpg'])
 style = st.selectbox("Select style", [i for i in STYLES.keys()])
 
 if st.button("submit") and file is not None and style is not None:
-	res = requests.post(f'https://localhost:8080/styles/{STYLES[style]}', files={'file': file}, )
+	res = requests.post(f'https://{server}/styles/{STYLES[style]}', files={'file': file}, )
 	img = BytesIO(res.content)
 	new_image = Image.open(img)
 	st.image(new_image, width=500)
