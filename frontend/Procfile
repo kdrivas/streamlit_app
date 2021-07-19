@@ -1,1 +1,1 @@
-web: bash frontend/setup.sh && streamlit run --server.port $PORT --server.enableCORS false frontend/main.py
+web: bash frontend/setup.sh && streamlit run --server.port $PORT --server.enableCORS false --server.enableXsrfProtection false frontend/main.py
