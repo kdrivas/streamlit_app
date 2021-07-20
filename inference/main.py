@@ -9,8 +9,6 @@ import io
 import cv2
 import os
 
-from constants import  BASE_PATH
-
 from starlette.middleware.cors import CORSMiddleware
 
 MODEL_PATH = os.getenv('MODEL_PATH', 'models')
