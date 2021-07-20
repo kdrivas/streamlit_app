@@ -23,6 +23,7 @@ style = st.selectbox("Select style", [i for i in STYLES.keys()])
 
 if st.button("submit") and file is not None and style is not None:
 	res = requests.post(f'https://{SERVER}/styles/{STYLES[style]}', files={'file': file}, )
+	print(res.content)
 	img = BytesIO(res.content)
 	new_image = Image.open(img)
 	st.image(new_image, width=500)
