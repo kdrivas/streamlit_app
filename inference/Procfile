@@ -1,1 +1,1 @@
-web: cd inference && export MODEL_PATH="s3://projects-1425601/models" && uvicorn main:app --port $PORT --host 0.0.0.0
+web: cd inference && bash inference/download_models.sh && uvicorn main:app --port $PORT --host 0.0.0.0
