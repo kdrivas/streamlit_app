@@ -9,13 +9,14 @@ Heroku + Streamlit + FastAPI
 
 - Deploy on Heroku
 ```
+	### Deploy frontend
 	heroku create --app <frontend_app> --remote <frontend_app_remote>
 	heroku buildpacks:set heroku/python -a <frontend_app>
 	heroku buildpacks:add -a <frontend_app> heroku-community/multi-procfile
 	heroku config:set -a <frontend_app> PROCFILE=frontend/Procfile
 	git push https://git.heroku.com/<frontend_app>.git HEAD:main
-```
-```
+
+	### Deploy api
 	heroku create --app <api_app> --remote <api_app_remote>
 	heroku buildpacks:set heroku/python -a <api_app>
 	heroku buildpacks:add -a <api_app> heroku-community/multi-procfile
