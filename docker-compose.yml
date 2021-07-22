@@ -4,14 +4,14 @@ services:
   inference:
     build: 
       context: ./inference
-      dockerfile: Dockerfile.inference
+      dockerfile: Dockerfile
     expose:
       - 8080
 
   frontend:
     build: 
       context: ./frontend
-      dockerfile: Dockerfile.frontend
+      dockerfile: Dockerfile
     ports:
       - 8501:8501
     depends_on:
